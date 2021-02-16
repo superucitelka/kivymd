@@ -3,35 +3,118 @@ BoxLayout:
 
     MDToolbar:
         title: 'Bottom navigation'
-        md_bg_color: .2, .2, .2, 1
+        md_bg_color: .8, .2, .2, 1
         specific_text_color: 1, 1, 1, 1
 
     MDBottomNavigation:
-        panel_color: .2, .2, .2, 1
+        panel_color: .8, .8, .4, 1
+
+        MDBottomNavigationItem:
+            name: 'screen 0'
+            text: 'Hlavní'
+            icon: 'home'
+
+            MainScreen:
 
         MDBottomNavigationItem:
             name: 'screen 1'
-            text: 'Python'
-            icon: 'language-python'
+            text: 'Text'
+            icon: 'text'
 
-            MDLabel:
-                text: 'Python'
-                halign: 'center'
+            TextScreen:
 
         MDBottomNavigationItem:
             name: 'screen 2'
-            text: 'C++'
-            icon: 'language-cpp'
+            text: 'Formulář'
+            icon: 'card-bulleted'
 
-            MDLabel:
-                text: 'I programming of C++'
-                halign: 'center'
+            FormScreen:
 
         MDBottomNavigationItem:
             name: 'screen 3'
-            text: 'JS'
-            icon: 'language-javascript'
+            text: 'Tabulka'
+            icon: 'grid'
 
-            MDLabel:
-                text: 'JS'
-                halign: 'center'
+            TableScreen:
+
+
+<TextScreen>:
+    name: 'textscreen'
+
+    BoxLayout:
+       # orientation: 'vertical'
+        size_hint_y: .8
+        size_hint_x: .5
+        height: self.minimum_height
+        spacing: 10
+        canvas:
+            Color:
+                rgba: app.theme_cls.primary_color
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        MDLabel:
+            text:'Text Screen'
+            font_style: 'H5'
+            halign: 'center'
+            size_hint: (.7, .5)
+            pos_hint: {'center_y': 0.95}
+            canvas.before:
+                Color:
+                    rgba: 0, 50, 0, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        MDLabel:
+            text:'Text Screen'
+            font_style: 'H4'
+            halign: 'center'
+            pos_hint: {'center_y': 0.95}
+            canvas.before:
+                Color:
+                    rgba: 100, 50, 0, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+
+    BoxLayout:
+        size_hint_y: .5
+        size_hint_x: 1
+        height: self.minimum_height
+
+        MDLabel:
+            text:'Text Screen'
+            font_style: 'H4'
+            halign: 'center'
+            pos_hint: {'center_y': 0.95}
+
+
+<FormScreen>
+    name:'formscreen'
+    PageLayout:
+        MDLabel:
+            text:'Form Screen'
+            font_style: 'H2'
+            halign: 'center'
+            pos_hint : {'center_y':0.85}
+
+<TableScreen>:
+    name:'tablescreen'
+    PageLayout:
+        MDLabel:
+            text:'Table Screen'
+            font_style: 'H2'
+            halign: 'center'
+            pos_hint: {'center_y':0.75}
+
+<MainScreen>:
+    name : 'mainscreen'
+    PageLayout:
+        MDLabel:
+            text:'Main Screen'
+            font_style : 'H2'
+            halign : 'center'
+            pos_hint : {'center_y':0.7}
