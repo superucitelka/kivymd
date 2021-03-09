@@ -11,8 +11,8 @@ from kivy.core.text import LabelBase
 
 from kivy.lang import Builder
 
-from kivymd.app import MDApp
-from kivymd.font_definitions import theme_font_styles
+from kivymid.app import MDApp
+from kivymid.font_definitions import theme_font_styles
 
 
 class MainApp(MDApp):

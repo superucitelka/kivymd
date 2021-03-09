@@ -1,7 +1,7 @@
 from kivy.uix.screenmanager import Screen
 
-from kivymd.app import MDApp
-from kivymd.uix.button import MDRectangleFlatButton
+from kivymid.app import MDApp
+from kivymid.uix.button import MDRectangleFlatButton
 
 
 class MainApp(MDApp):

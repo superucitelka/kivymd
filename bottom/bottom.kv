@@ -9,6 +9,7 @@ BoxLayout:
         specific_text_color: 1, 1, 1, 1
 
     MDBottomNavigation:
+        id: navigation
         panel_color: .8, .8, .4, 1
 
         MDBottomNavigationItem:
@@ -20,14 +21,14 @@ BoxLayout:
 
         MDBottomNavigationItem:
             name: 'screen 1'
-            text: 'Text'
+            text: 'BMI'
             icon: 'text'
 
             TextScreen:
 
         MDBottomNavigationItem:
             name: 'screen 2'
-            text: 'Formulář'
+            text: 'Seznam'
             icon: 'card-bulleted'
 
             FormScreen:
@@ -131,21 +132,11 @@ BoxLayout:
 
 <FormScreen>
     name:'formscreen'
-    PageLayout:
-        MDLabel:
-            text:'Form Screen'
-            font_style: 'H2'
-            halign: 'center'
-            pos_hint : {'center_y':0.85}
+
 
 <TableScreen>:
     name:'tablescreen'
-    PageLayout:
-        MDLabel:
-            text:'Table Screen'
-            font_style: 'H2'
-            halign: 'center'
-            pos_hint: {'center_y':0.75}
+
 
 <MainScreen>:
     name : 'mainscreen'
@@ -155,3 +146,22 @@ BoxLayout:
             font_style : 'H2'
             halign : 'center'
             pos_hint : {'center_y':0.7}
+
+
+<Content>:
+    orientation: 'vertical'
+    size_hint_x: 1
+    size_hint_y: None
+    height: "100dp"
+
+    MDTextField:
+        id: person_name
+        text: 'cosi'
+        pos_hint: {'center_x': .5, 'center_y': .9}
+
+    MDDropDownItem:
+        id: state_item
+        pos_hint: {'center_x': 0.5, 'center_y': .7}
+        size_hint_x: 1
+        text: 'Stát'
+        on_release: self.parent.menu.open()

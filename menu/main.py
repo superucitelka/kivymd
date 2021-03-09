@@ -2,9 +2,9 @@ from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import StringProperty, ListProperty
 
-from kivymd.app import MDApp
-from kivymd.theming import ThemableBehavior
-from kivymd.uix.list import OneLineIconListItem, MDList
+from kivymid.app import MDApp
+from kivymid.theming import ThemableBehavior
+from kivymid.uix.list import OneLineIconListItem, MDList
 
 
 class ContentNavigationDrawer(BoxLayout):
